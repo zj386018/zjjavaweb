@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<filter>
+		<filter-name>MyFilter</filter-name>
+		<filter-class>filter.MyFilter</filter-class>
+	</filter>
+	<filter>
+		<filter-name>ManageFilter</filter-name>
+		<filter-class>filter.ManageFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>ManageFilter</filter-name>
+		<url-pattern>/setRoom.jsp</url-pattern>
+		<url-pattern>/manage.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>MyFilter</filter-name>
+		<url-pattern>/order.jsp</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>UserLogServlet</servlet-name>
+		<servlet-class>servlet.UserLogServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AdmLogServlet</servlet-name>
+		<servlet-class>servlet.AdmLogServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>RegServlet</servlet-name>
+		<servlet-class>servlet.RegServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>OrderServlet</servlet-name>
+		<servlet-class>servlet.OrderServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CheInSevlet</servlet-name>
+		<servlet-class>servlet.CheInSevlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CheOutServlet</servlet-name>
+		<servlet-class>servlet.CheOutServlet</servlet-class>
+	</servlet>
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>UserLogServlet</servlet-name>
+		<url-pattern>/UserLogServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AdmLogServlet</servlet-name>
+		<url-pattern>/AdmLogServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RegServlet</servlet-name>
+		<url-pattern>/RegServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>OrderServlet</servlet-name>
+		<url-pattern>/OrderServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CheInSevlet</servlet-name>
+		<url-pattern>/CheInSevlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CheOutServlet</servlet-name>
+		<url-pattern>/CheOutServlet</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<login-config>
+		<auth-method>BASIC</auth-method>
+	</login-config>
+</web-app>
